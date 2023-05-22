@@ -1,4 +1,8 @@
 function doUpload() {
+    if (!window.u || !window.p) {
+        alert("请先预填写用户名和密码！");
+        return;
+    }
     [0, 1, 2, 3, 4].forEach((diff) => {
         $.ajax({
             url: "https://maimai.wahlap.com/maimai-mobile/record/musicGenre/search/?genre=99&diff=" + diff,
@@ -35,7 +39,7 @@ window.onload = function () {
     backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);\
     font-size:0.8rem;";
     button.onclick = function () {
-        var r = confirm("确定上传成绩到查分器吗？\n(上传需要一点时间，请勿离开页面)");
+        var r = confirm("确定上传成绩到查分器吗？\n(上传需要一点时间，请勿离开页面)" + "\n\n" + "用户名：" + window.u + "\n密码：" + window.p);
         if (r == true) {
             document.body.appendChild(box);
             document.getElementById("dxp-btn").setAttribute("disabled", "disabled");

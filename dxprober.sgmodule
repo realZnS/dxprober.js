@@ -1,0 +1,10 @@
+#!name=dxprober.js
+#!desc=舞萌 DX 查分器数据导入插件
+#!author=realZnS, Kirin
+#!homepage=https://github.com/realZnS/dxprober.js
+
+[Script]
+dxprober = type=http-response, requires-body=true, pattern=https?:\/\/maimai\.wahlap\.com\/maimai-mobile\/record, script-path=https://github.com/realZnS/dxprober.js/raw/main/dxprober_load.js
+
+[MITM]
+hostname = maimai.wahlap.com
